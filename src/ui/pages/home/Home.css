@@ -1,0 +1,35 @@
+.home-main {
+    display: flex;
+}
+
+.home-graph {
+    display: grid;
+    grid-template-areas: 
+        'c1 c1 c1'
+        'c2 c3 c4';
+    gap: 30px;
+}
+
+.dailyActivity {
+    grid-area: c1;
+    background-color: var(--light-grey);
+    border-radius: 5px;
+}
+
+.averageDuration {
+    grid-area: c2;
+    background-color: var(--main);
+    border-radius: 5px;
+}
+
+.statChart {
+    grid-area: c3;
+    background-color: var(--grey);
+    border-radius: 5px;
+}
+
+.scoreChart {
+    grid-area: c4;
+    background-color: var(--light-grey);
+    border-radius: 5px;
+}

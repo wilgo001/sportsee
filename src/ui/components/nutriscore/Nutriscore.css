@@ -1,0 +1,32 @@
+.nutri-container {
+    background-color: var(--light-grey);
+    padding: 32px;
+    border-radius: 5px;
+    display: flex;
+}
+
+.nutri-icon-container {
+    border-radius: 6px;
+    height: 60px;
+    width: 60px;
+}
+
+.nutri-icon-container > img {
+    margin: 20px;
+}
+
+.Calories {
+    background-color: var(--light-red);
+}
+
+.Proteines {
+    background-color: var(--light-blue);
+}
+
+.Glucides {
+    background-color:  var(--light-yellow);
+}
+
+.Lipides {
+    background-color: var(--light-pink);
+}

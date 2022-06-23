@@ -1,0 +1,36 @@
+.sidebar.container {
+    background-color: var(--dark);
+    width: 117px;
+    height: 100%;
+    position: relative;
+}
+
+.sidebar.copyright {
+    position: absolute;
+    bottom: calc(100px);
+    color: #fff;
+    transform: rotate(-90deg);
+}
+
+.sidebar.nav {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    width: 100%;
+    align-items: center;
+    justify-content: center;
+    height: calc(100% - 100px);
+}
+
+.sidebar.icon {
+    width: 64px;
+    height: 64px;
+    background-color: #fff;
+    border-radius: 6px;
+}
+
+.sidebar.icon > img {
+    margin: 15px;
+    width: calc(100% - 30px);
+    height: calc(100% - 30px);
+}

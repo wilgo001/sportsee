@@ -1,0 +1,21 @@
+.header.container {
+    height: 70px;
+    background-color: var(--dark);
+    display: flex;
+    justify-content: space-between;
+    padding: 10px 30px;
+    box-shadow: 0 2px 5px grey;
+}
+
+.header.navigation {
+    display: flex;
+    gap: 100px;
+    align-items: center;
+    padding: 0 30px;
+}
+
+.header.navigation > p {
+    color: white;
+    font-size: 2.3rem;
+    line-height: 100%;
+}
