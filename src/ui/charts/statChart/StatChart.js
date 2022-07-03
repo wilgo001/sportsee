@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import { PolarAngleAxis, PolarGrid, Radar, RadarChart } from "recharts";
+import { PolarAngleAxis, PolarGrid, Radar, RadarChart, ResponsiveContainer } from "recharts";
 import { getStats } from "../../../services/Services";
 
 function StatChart(props) {    
@@ -11,11 +11,13 @@ function StatChart(props) {
     })
     return(
         <div className={props.className}>
-            <RadarChart height={260} width={260} cx="50%" cy="50%" outerRadius="80%" data={data}>
-                <PolarGrid />
-                <PolarAngleAxis dataKey="kind"/>
-                <Radar name="Score" dataKey="value" fill="#ff0000" fillOpacity={0.6} />
-            </RadarChart>
+            <ResponsiveContainer height="100%" width="100%" >
+                <RadarChart cx="50%" cy="50%" outerRadius="80%" data={data}>
+                    <PolarGrid />
+                    <PolarAngleAxis dataKey="name"/>
+                    <Radar name="Score" dataKey="value" fill="#ff0000" fillOpacity={0.6} />
+                </RadarChart>
+            </ResponsiveContainer>
         </div>
     )
 

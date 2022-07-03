@@ -1,10 +1,16 @@
 .header.container {
-    height: 70px;
+    height: 7%;
     background-color: var(--dark);
     display: flex;
     justify-content: space-between;
     padding: 10px 30px;
     box-shadow: 0 2px 5px grey;
+    width: calc(100% - 40px);
+}
+
+.header.logo {
+    height: calc(100% - 10px);
+    margin: 5px 0;
 }
 
 .header.navigation {

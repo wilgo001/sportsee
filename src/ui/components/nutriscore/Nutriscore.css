@@ -1,18 +1,24 @@
 .nutri-container {
     background-color: var(--light-grey);
-    padding: 32px;
+    padding: 20px;
     border-radius: 5px;
     display: flex;
+    width: calc(100% - 40px);
 }
 
 .nutri-icon-container {
-    border-radius: 6px;
-    height: 60px;
+    position: relative;
     width: 60px;
+    height: 60px;
+    margin: 0 15px;
+    border-radius: 6px;
 }
 
 .nutri-icon-container > img {
+    position: absolute;
     margin: 20px;
+    width: calc(100% - 40px);
+    height: calc(100% - 40px);
 }
 
 .Calories {
@@ -29,4 +35,15 @@
 
 .Lipides {
     background-color: var(--light-pink);
+}
+
+.nutri-score {
+    font-weight: 700;
+    font-size: 1.6rem;
+    margin: 5px 0;
+}
+
+.nutri-name {
+    font-size: 1.3rem;
+    margin: 5px 0;
 }

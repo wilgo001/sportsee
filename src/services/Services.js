@@ -31,13 +31,43 @@ function getAverageDuration() {
 }
 
 function getStats() {
-    return getPerformance().then(data => data.data);
+    return getPerformance().then(data => {
+        data.data.forEach(value => {
+            switch(value.kind) {
+                case 1 :
+                    value.name = "cardio";
+                    break;
+                case 2 :
+                    value.name = "energy";
+                    break;
+                case 3 :
+                    value.name = "endurance";
+                    break;
+                case 4 :
+                    value.name = "strength";
+                    break;
+                case 5 :
+                    value.name = "speed";
+                    break;
+                case 6 :
+                    value.name = "intensity";
+                    break;
+            }
+        })
+        return data.data;
+    });
 }
 
-function getScore() {
+function getScoreInDegree() {
     return getUser().then(data =>  {
-        return data.score * 360 + 90;
+        return data.todayScore * 360 + 90;
     });
+}
+
+function getScoreInPercent() {
+    return getUser().then(data => {
+        return data.todayScore * 100;
+    })
 }
 
 function getDailyActivitySortByDate() {
@@ -52,4 +82,4 @@ function getDailyActivitySortByDate() {
     })
 }
 
-export { getFirstName, getKeyData, getNutriCountFromNutriName, getAverageDuration, getStats, getScore, getDailyActivitySortByDate };
+export { getFirstName, getKeyData, getNutriCountFromNutriName, getAverageDuration, getStats, getScoreInDegree, getScoreInPercent, getDailyActivitySortByDate };

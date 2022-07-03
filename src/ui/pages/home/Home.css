@@ -1,35 +1,81 @@
 .home-main {
     display: flex;
+    height: calc(100% - 150px);
+    gap: 30px;
+    align-content: stretch;
+    align-items: stretch;
+}
+
+.home-container {
+    height: 92%;
+    width: 100%;
+    margin: 25px 50px;
+}
+
+.home-container > h1 {
+    font-size: 4rem;
+    margin: 0;
+}
+
+.name  {
+    color: var(--main);
 }
 
 .home-graph {
+    flex-grow: 2;
     display: grid;
     grid-template-areas: 
         'c1 c1 c1'
         'c2 c3 c4';
     gap: 30px;
+    grid-template-columns: repeat(3, 1fr);
+}
+
+.graph {
+    position: relative;
+}
+
+.graph-title {
+    font-weight: 500;
+    position: absolute;
+    left: 20px;
+    top: 10px;
+    font-size: 1.2rem;
+    width: 135px;
 }
 
 .dailyActivity {
     grid-area: c1;
     background-color: var(--light-grey);
     border-radius: 5px;
+    height: 300px;
 }
 
 .averageDuration {
     grid-area: c2;
     background-color: var(--main);
     border-radius: 5px;
+    height: 200px;
 }
 
 .statChart {
     grid-area: c3;
     background-color: var(--grey);
     border-radius: 5px;
+    height: 200px;
 }
 
 .scoreChart {
     grid-area: c4;
     background-color: var(--light-grey);
     border-radius: 5px;
+    height: 200px;
+}
+
+.home-nutriscores {
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: repeat(4, 1fr);
+    height: 100%;
+    gap: 30px;
 }

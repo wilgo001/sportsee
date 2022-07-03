@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react";
-import { Pie, PieChart } from "recharts";
-import { getScore } from "../../../services/Services";
+import { Pie, PieChart, ResponsiveContainer } from "recharts";
+import { getScoreInDegree, getScoreInPercent } from "../../../services/Services";
+import "./ScoreChart.css";
 
   const dataFull = [
     {
@@ -11,16 +12,25 @@ import { getScore } from "../../../services/Services";
 
 function ScoreChart(props) {
     const [data, setData] = useState(90);
+    const [percent, setPercent] = useState(0);
     useEffect(() => {
-        getScore().then(data => {
+        getScoreInDegree().then(data => {
             setData(data);
+        })
+        getScoreInPercent().then(data => {
+          setPercent(data);
         })
     })
     return(
         <div className={props.className}>
-            <PieChart width={260} height={260}>
-                <Pie startAngle={90} endAngle={data} data={dataFull} dataKey="value" nameKey="name" cx="50%" cy="50%" innerRadius={60} outerRadius={80} fill="#ff0000" />
+          <p className="graph-title">Score</p>
+          <p className="score-percentage">{percent + "%"}</p>
+          <p className="score-text">de votre objectif</p>
+          <ResponsiveContainer width="100%" height="100%">
+            <PieChart>
+              <Pie startAngle={90} endAngle={data} data={dataFull} dataKey="value" nameKey="name" cx="50%" cy="50%" innerRadius={60} outerRadius={70} fill="#ff0000" />
             </PieChart>
+          </ResponsiveContainer>
         </div>
     )
 }

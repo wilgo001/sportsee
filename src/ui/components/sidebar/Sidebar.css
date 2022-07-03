@@ -1,6 +1,6 @@
 .sidebar.container {
     background-color: var(--dark);
-    width: 117px;
+    width: 8%;
     height: 100%;
     position: relative;
 }
@@ -23,13 +23,21 @@
 }
 
 .sidebar.icon {
-    width: 64px;
-    height: 64px;
+    position: relative;
+    width: calc(100% - 30px);
+    margin: 0 15px;
     background-color: #fff;
     border-radius: 6px;
 }
 
+.sidebar.icon::after {
+    content: "";
+    display: block;
+    padding-bottom: 100%;
+}
+
 .sidebar.icon > img {
+    position: absolute;
     margin: 15px;
     width: calc(100% - 30px);
     height: calc(100% - 30px);

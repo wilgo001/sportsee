@@ -19,13 +19,13 @@ function Home(props) {
                 <span className="bonjour">Bonjour </span>
                 <span className="name">{name}</span>
             </h1>
-            <h3>Félicitation ! Vous avez explosé vos objectifs hier</h3>
+            <h3>Félicitation ! Vous avez explosé vos objectifs hier 👏</h3>
             <div className="home-main">
                 <div className="home-graph">
-                    <DailyActivity className="dailyActivity"/>
-                    <AverageDuration className="averageDuration"/>
-                    <StatChart className="statChart"/>
-                    <ScoreChart className="scoreChart"/>
+                    <DailyActivity className="graph dailyActivity"/>
+                    <AverageDuration className="graph averageDuration"/>
+                    <StatChart className="graph statChart"/>
+                    <ScoreChart className="graph scoreChart"/>
                 </div>
                 <div className="home-nutriscores">
                     <Nutriscore name={NUTRISCORE_LIST.Calorie}/>

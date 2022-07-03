@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react";
-import { Line, LineChart } from "recharts";
+import { Line, LineChart, ResponsiveContainer } from "recharts";
 import { getAverageDuration } from "../../../services/Services";
+import "./AverageDuration.css";
 
 function AverageDuration(props) {
     const [data, setData] = useState({});
@@ -11,9 +12,12 @@ function AverageDuration(props) {
     })
     return(
         <div className={props.className}>
-            <LineChart width={260} height={260} data={data}>
-                <Line type="monotone" dataKey="sessionLength" stroke="#fff" strokeWidth={2} />
-            </LineChart>
+            <p className="graph-title avdu-title">Durée moyenne des sessions</p>
+            <ResponsiveContainer width="100%" height="100%" >
+                <LineChart width={260} height={260} data={data}>
+                    <Line type="monotone" dataKey="sessionLength" stroke="#fff" strokeWidth={2} />
+                </LineChart>
+            </ResponsiveContainer>
         </div>
     )
 }
