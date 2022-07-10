@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react";
 import { PolarAngleAxis, PolarGrid, Radar, RadarChart, ResponsiveContainer } from "recharts";
 import { getStats } from "../../../services/Services";
+import PropTypes from "prop-types";
 
 function StatChart(props) {    
     const [ data, setData ] = useState({})
@@ -21,6 +22,10 @@ function StatChart(props) {
         </div>
     )
 
+}
+
+StatChart.propTypes = {
+    className: PropTypes.string
 }
 
 export default StatChart;

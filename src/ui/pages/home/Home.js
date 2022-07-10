@@ -3,6 +3,7 @@ import { getFirstName } from "../../../services/Services";
 import { AverageDuration, DailyActivity, ScoreChart, StatChart } from "../../charts";
 import { Nutriscore, NUTRISCORE_LIST } from "../../components";
 import "./Home.css";
+import PropTypes from 'prop-types';
 
 
 function Home(props) {
@@ -36,6 +37,10 @@ function Home(props) {
             </div>
         </div>
     )
+}
+
+Home.propTypes = {
+    className: PropTypes.string
 }
 
 export default Home;

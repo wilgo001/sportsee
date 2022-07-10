@@ -2,6 +2,7 @@ import { useEffect, useState } from "react";
 import { Pie, PieChart, ResponsiveContainer } from "recharts";
 import { getScoreInDegree, getScoreInPercent } from "../../../services/Services";
 import "./ScoreChart.css";
+import PropTypes from "prop-types";
 
   const dataFull = [
     {
@@ -33,6 +34,10 @@ function ScoreChart(props) {
           </ResponsiveContainer>
         </div>
     )
+}
+
+ScoreChart.propTypes = {
+  className: PropTypes.string
 }
 
 export default ScoreChart;

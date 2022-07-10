@@ -1,5 +1,6 @@
 import "./Header.css";
 import logo from '../../../assets/logo.png';
+import PropTypes from "prop-types";
 
 function Header(props) {
     return(
@@ -13,6 +14,10 @@ function Header(props) {
             </nav>
         </div>
     )
+}
+
+Header.propTypes = {
+    className: PropTypes.string
 }
 
 export default Header;

@@ -3,6 +3,7 @@ import { cal, glu, lip, prot } from "../../../assets/icons";
 import { NUTRISCORE_LIST } from "..";
 import { useEffect, useState } from "react";
 import { getNutriCountFromNutriName } from "../../../services/Services";
+import PropTypes from "prop-types";
 
 function Nutriscore(props) {
     const [count, setCount] = useState(0);
@@ -45,6 +46,10 @@ function Nutriscore(props) {
         </div>
     )
 
+}
+
+Nutriscore.propTypes = {
+    name: PropTypes.string.isRequired
 }
 
 export default Nutriscore;

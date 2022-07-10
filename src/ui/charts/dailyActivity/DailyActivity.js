@@ -2,6 +2,7 @@ import { useEffect, useState } from "react";
 import { Bar, BarChart, CartesianGrid, Legend, Tooltip, XAxis, YAxis, Text, ResponsiveContainer } from "recharts";
 import { getDailyActivitySortByDate } from "../../../services/Services";
 import "./DailyActivity.css";
+import PropTypes from "prop-types";
 
 function DailyActivity(props) {
     const [data, setData] = useState([]);
@@ -28,6 +29,10 @@ function DailyActivity(props) {
             </ResponsiveContainer>
         </div>
     )
+}
+
+DailyActivity.propTypes = {
+    className: PropTypes.string
 }
 
 export default DailyActivity

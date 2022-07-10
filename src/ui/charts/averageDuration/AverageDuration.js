@@ -2,6 +2,7 @@ import { useEffect, useState } from "react";
 import { Line, LineChart, ResponsiveContainer } from "recharts";
 import { getAverageDuration } from "../../../services/Services";
 import "./AverageDuration.css";
+import PropTypes from "prop-types";
 
 function AverageDuration(props) {
     const [data, setData] = useState({});
@@ -20,6 +21,10 @@ function AverageDuration(props) {
             </ResponsiveContainer>
         </div>
     )
+}
+
+AverageDuration.propTypes = {
+    className: PropTypes.string
 }
 
 export default AverageDuration;
